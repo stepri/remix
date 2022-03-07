@@ -1,5 +1,5 @@
-import { createRequestHandler as createRemixRequestHandler } from "@remix-run/server-runtime";
-import type { ServerBuild } from "@remix-run/server-runtime";
+import { createRequestHandler as createRemixRequestHandler } from "https://esm.sh/@remix-run/server-runtime?pin=v59";
+import type { ServerBuild } from "https://esm.sh/@remix-run/server-runtime?pin=v59";
 // @ts-expect-error
 import * as path from "https://deno.land/std/path/mod.ts";
 import { getType } from "mime";
