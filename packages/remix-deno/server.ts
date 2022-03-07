@@ -2,7 +2,7 @@ import { createRequestHandler as createRemixRequestHandler } from "https://esm.s
 import type { ServerBuild } from "https://esm.sh/@remix-run/server-runtime?pin=v59";
 // @ts-expect-error
 import * as path from "https://deno.land/std/path/mod.ts";
-import { getType } from "mime";
+import mime from "https://esm.sh/mime?pin=v59";
 
 function defaultCacheControl(url: URL, assetsPublicPath: string = "/build/") {
   if (url.pathname.startsWith(assetsPublicPath)) {
@@ -52,7 +52,7 @@ export async function serveStaticFiles(
   let url = new URL(request.url);
 
   let headers = new Headers();
-  let contentType = getType(url.pathname);
+  let contentType = mime.getType(url.pathname);
   if (contentType) {
     headers.set("Content-Type", contentType);
   }
